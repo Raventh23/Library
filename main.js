@@ -8,5 +8,6 @@ function Book(title){
     this.id = crypto.randomUUID();
 }
 
-let classic = new Book('hobbit');
-console.log(classic);
+function addBookToLibrary(title){
+    MyLibrary.push(new Book(title));
+};
