@@ -1,4 +1,4 @@
-const MyLibrary = []
+const myLibrary = []
 
 function Book(title){
     if (!new.target) {
@@ -9,5 +9,9 @@ function Book(title){
 }
 
 function addBookToLibrary(title){
-    MyLibrary.push(new Book(title));
+    myLibrary.push(new Book(title));
+};
+
+function displayLibrary(){
+    console.log(myLibrary);
 };
