@@ -1,5 +1,9 @@
 const myLibrary = []
 
+const table = document.createElement('table');
+table.classList.add('library');
+document.body.appendChild(table);
+    
 function Book(title, author, numberOfPages, finished){
     if (!new.target) {
         throw Error("you must use the 'new' operator to make a new book")
@@ -11,10 +15,17 @@ function Book(title, author, numberOfPages, finished){
     this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(title){
-    myLibrary.push(new Book(title));
+function addBookToLibrary(title, author, numberOfPages, finished){
+    myLibrary.push(new Book(title, author, numberOfPages, finished));
 };
 
 function displayLibrary(){
-    console.log(myLibrary);
-};
+    myLibrary.forEach(Book =>{
+        const row = document.createElement('tr');
+        Object.values(Book).forEach(value =>{
+            const cell = document.createElement('td');
+            cell.textContent = value;
+            row.appendChild(cell);
+        });
+        table.appendChild(row);
+    })};
