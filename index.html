@@ -8,6 +8,23 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <div class="newBook">
+        <input type="text" class="title">
+        <label for="title">title</label>
+
+        <input type="text" class="author">
+        <label for="author">author</label>
+
+        <input type="number" class="numberOfPages">
+        <label for="numberOfPages">number of pages</label>
+
+        <input type="radio" name="finished" id="finished" value="yes">
+        <label for="finished">finished</label>
+        <input type="radio" name="finished" id="finished" value="no">
+        <label for="finished">not finished</label>
+        
+        <button onclick="addBookToLibrary()">add new Book</button>
+    </div>
+    <button onclick="displayLibrary()">Display Library</button>
 </body>
 </html>
